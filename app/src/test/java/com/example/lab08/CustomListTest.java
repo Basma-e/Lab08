@@ -13,6 +13,7 @@ public class CustomListTest {
         assertTrue(list.hasCity(edm));
     }
 
+
     @Test
     void deleteCity_removes_only_that_city() {
         CustomList list = new CustomList();
@@ -30,4 +31,20 @@ public class CustomListTest {
         assertTrue(list.hasCity(cal));
     }
 
+
+    @Test
+    void countCities_reflects_number_added() {
+        CustomList list = new CustomList();
+
+        // initially 0
+        assertEquals(0, list.countCities());
+
+        // after 1 add → 1
+        list.addCity(new City("Edmonton", "AB"));
+        assertEquals(1, list.countCities());
+
+        // after another add → 2
+        list.addCity(new City("Calgary", "AB"));
+        assertEquals(2, list.countCities());
+    }
 }

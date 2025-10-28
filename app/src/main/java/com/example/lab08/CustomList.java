@@ -21,10 +21,15 @@ public class CustomList {
 
 
     public void deleteCity(City city) {
-        boolean removed = cities.remove(city); // or getInternalList().remove(city)
+        boolean removed = cities.remove(city);
         if (!removed) {
             throw new NoSuchElementException("City not found: " + city);
         }
     }
+
+    /**
+     public int countCities() {
+     }
+     */
 
 }
